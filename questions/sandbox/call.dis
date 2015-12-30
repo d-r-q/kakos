@@ -1,0 +1,53 @@
+00000000  55                push rbp
+00000001  4889E5            mov rbp,rsp
+00000004  BFDEDE0000        mov edi,0xdede
+00000009  B800000000        mov eax,0x0
+0000000E  E802000000        call qword 0x15
+00000013  5D                pop rbp
+00000014  C3                ret
+00000015  55                push rbp
+00000016  4889E5            mov rbp,rsp
+00000019  897DFC            mov [rbp-0x4],edi
+0000001C  8B45FC            mov eax,[rbp-0x4]
+0000001F  5D                pop rbp
+00000020  C3                ret
+00000021  0000              add [rax],al
+00000023  0000              add [rax],al
+00000025  0000              add [rax],al
+00000027  001400            add [rax+rax],dl
+0000002A  0000              add [rax],al
+0000002C  0000              add [rax],al
+0000002E  0000              add [rax],al
+00000030  017A52            add [rdx+0x52],edi
+00000033  0001              add [rcx],al
+00000035  7810              js 0x47
+00000037  011B              add [rbx],ebx
+00000039  0C07              or al,0x7
+0000003B  08900100001C      or [rax+0x1c000001],dl
+00000041  0000              add [rax],al
+00000043  001C00            add [rax+rax],bl
+00000046  0000              add [rax],al
+00000048  B8FFFFFF15        mov eax,0x15ffffff
+0000004D  0000              add [rax],al
+0000004F  0000              add [rax],al
+00000051  41                rex.b
+00000052  0E                db 0x0e
+00000053  108602430D06      adc [rsi+0x60d4302],al
+00000059  50                push rax
+0000005A  0C07              or al,0x7
+0000005C  0800              or [rax],al
+0000005E  0000              add [rax],al
+00000060  1C00              sbb al,0x0
+00000062  0000              add [rax],al
+00000064  3C00              cmp al,0x0
+00000066  0000              add [rax],al
+00000068  AD                lodsd
+00000069  FF                db 0xff
+0000006A  FF                db 0xff
+0000006B  FF0C00            dec dword [rax+rax]
+0000006E  0000              add [rax],al
+00000070  00410E            add [rcx+0xe],al
+00000073  108602430D06      adc [rsi+0x60d4302],al
+00000079  470C07            or al,0x7
+0000007C  0800              or [rax],al
+0000007E  0000              add [rax],al

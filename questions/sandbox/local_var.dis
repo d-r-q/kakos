@@ -1,0 +1,30 @@
+00000000  55                push rbp
+00000001  4889E5            mov rbp,rsp
+00000004  C745FCBABA0000    mov dword [rbp-0x4],0xbaba
+0000000B  8B45FC            mov eax,[rbp-0x4]
+0000000E  5D                pop rbp
+0000000F  C3                ret
+00000010  1400              adc al,0x0
+00000012  0000              add [rax],al
+00000014  0000              add [rax],al
+00000016  0000              add [rax],al
+00000018  017A52            add [rdx+0x52],edi
+0000001B  0001              add [rcx],al
+0000001D  7810              js 0x2f
+0000001F  011B              add [rbx],ebx
+00000021  0C07              or al,0x7
+00000023  08900100001C      or [rax+0x1c000001],dl
+00000029  0000              add [rax],al
+0000002B  001C00            add [rax+rax],bl
+0000002E  0000              add [rax],al
+00000030  D0FF              sar bh,1
+00000032  FF                db 0xff
+00000033  FF10              call qword [rax]
+00000035  0000              add [rax],al
+00000037  0000              add [rax],al
+00000039  41                rex.b
+0000003A  0E                db 0x0e
+0000003B  108602430D06      adc [rsi+0x60d4302],al
+00000041  4B0C07            o64 or al,0x7
+00000044  0800              or [rax],al
+00000046  0000              add [rax],al
