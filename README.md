@@ -6,7 +6,7 @@ Used training manual is ["Writing a Simple Operating System - from Scratch" by N
 kakos stands for КАК написать Операционную Систему (HOW to write Operating System)
 
 ## How to run
-* Install [bochs](http://bochs.sourceforge.net/)
+* Install [bochs](http://bochs.sourceforge.net/) (sudo apt install bochs bochs-x)
 * Execute `make run`
 * Press enter (it's selects default option #6 "Begin simulation")
 * Press 'c' (it's starts image execution simulation)
