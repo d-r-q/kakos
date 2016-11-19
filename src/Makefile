@@ -12,7 +12,7 @@ os-image: boot/boot_sect.bin kernel.bin
 	cat $^ > os-image
 
 kernel.bin: kernel/kernel_entry.o ${OBJ}
-	ld -o $@ -Ttext 0x1000 $^ --oformat binary
+	ld -o $@ -Ttext 0x1000 -Tdata 0x2000 $^ --oformat binary
 
 # For simplicity, C files depend on all header files
 %.0 : %.c ${HEADERS}
